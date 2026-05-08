@@ -1,5 +1,7 @@
 import styles from "./Home.module.css";
 
+import heroImage from "/src/assets/images/hero-image.jpg";
+import heroImageMobile from "/src/assets/images/hero-image-mobile.jpg";
 
 export default function Home() {
     return (
@@ -9,9 +11,9 @@ export default function Home() {
                 <div className={styles.imageContainer}>
                     <div className={styles.vignette}></div>
                     <picture>
-                        <source media="(width < 600px)" srcSet="/src/assets/images/hero-image-mobile.jpg"/>
-                        <source media="(width > 600px)" srcSet="/src/assets/images/hero-image.jpg" />
-                        <img src="/src/assets/images/hero-image.jpg" alt="hero image" />
+                        <source media="(width < 600px)" srcSet={heroImageMobile}/>
+                        <source media="(width > 600px)" srcSet={heroImage} />
+                        <img src={heroImage} alt="hero image" />
                     </picture>
                 </div>
             </article>
