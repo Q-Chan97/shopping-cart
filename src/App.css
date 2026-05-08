@@ -27,6 +27,7 @@ body {
     font-size: 18px;
     line-height: 1.5;
     -webkit-font-smoothing: antialiased;
+    background-color: rgb(251, 249, 245);
 }
 
 img, picture, video, canvas, svg {
