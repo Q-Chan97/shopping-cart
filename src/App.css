@@ -1,3 +1,15 @@
+@font-face {
+    font-family: "Charis SIL";
+    src: url(./assets/fonts/CharisSIL.woff2) format(woff2),
+    url(./assets/fonts/CharisSIL.woff) format(woff);
+};
+
+@font-face {
+    font-family: "Noto Sans Cypro Minoan";
+    src: url(./assets/fonts/NotoSansCyproMinoan-Regular.woff2) format(woff2),
+    url(./assets/fonts/NotoSansCyproMinoan-Regular.woff) format(woff);
+};
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
