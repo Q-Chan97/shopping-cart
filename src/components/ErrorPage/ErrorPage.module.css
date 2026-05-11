@@ -1,0 +1,14 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container a {
+    color: black;
+}
+
+.container a:visited {
+    color: black;
+}
