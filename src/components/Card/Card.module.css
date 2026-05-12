@@ -1,0 +1,76 @@
+.cardContainer {
+    display: flex;
+    flex-direction: column;
+    color: black;
+    min-width: 100px;
+    max-width: 200px;
+    font-family: "Noto Sans Cypro Minoan", Arial, sans-serif;
+    font-size: 1rem;
+}
+
+.image {
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.301);
+    background-color: white;
+}
+
+.rating {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.rating div {
+    display: flex;
+    flex-direction: row;
+}
+
+.price {
+    font-weight: bold;
+}
+
+.quantityContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.input {
+    display: flex;
+    text-align: center;
+    width: 40%;
+    margin: 0 0.5rem;
+    border: 1px solid #0e0e0e2e;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f1641e;
+    width: 25px;
+    height: 25px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.8rem;
+}
+
+.offscreen {
+    border: 0;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    height: 1px; 
+    width: 1px;
+    overflow: hidden;
+}
+
+.submitButton {
+    align-self: center;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    background-color: #3f3f3f;
+    width: 80%;
+    margin-top: 5px;
+    padding: 5px;
+}
