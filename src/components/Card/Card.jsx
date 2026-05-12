@@ -20,7 +20,7 @@ export default function Card() {
                     -
                 </button>
                 <label className={styles.offscreen} htmlFor="quantity">quantity</label>
-                <input name="quantity" id="quantity" type="number" className={styles.input} defaultValue={0}></input>
+                <input name="quantity" id="quantity" className={styles.input} defaultValue={0}></input>
                 <button type="button" className={styles.button}>
                     +
                 </button>
