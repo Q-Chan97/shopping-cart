@@ -2,17 +2,32 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 30px;
 }
 
 .title {
     font-size: 1.8rem;
-    margin: 20px;
+    margin: 10px;
 }
 
 .container {
     display: grid;
+    place-items: center;
     grid-template-columns: repeat(2, 1fr);
     width: 100%;
     gap: 15px;
     padding: 15px;
+}
+
+@media (width > 600px) {
+    .title {
+        margin: 40px;
+    }
+
+
+    .container {
+        grid-template-columns: repeat(3, 1fr);
+        padding: 0px 100px;
+        gap: 50px;
+    }
 }
