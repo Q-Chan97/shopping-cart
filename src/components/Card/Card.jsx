@@ -1,6 +1,28 @@
+import { useState } from "react";
+
 import styles from "./Card.module.css";
 
 export default function Card({ image, title, price, rating, count }) {
+    const [itemQuantity, setItemQuantity] = useState(0);
+
+    function handleInputQuantity(e) {
+        e.preventDefault();
+
+        if (/^[0-9]*$/.test(e.target.value)) {
+            setItemQuantity(Number(e.target.value));
+        }
+    }
+
+    function handleButtonQuantity(type, itemQuantity) {
+        if (type === "decrease") {
+            if (itemQuantity <= 0) return;
+            setItemQuantity(itemQuantity - 1);
+        }
+        if (type === "increase") {
+            setItemQuantity(itemQuantity + 1);
+        }
+    }
+
     return (
         <article className={styles.cardContainer}>
             <div className={styles.imgContainer}><img className={styles.image} src={image} alt="product image" /></div>
@@ -16,12 +38,12 @@ export default function Card({ image, title, price, rating, count }) {
                 <p className={styles.price}>${price}</p>
             </div>
             <div className={styles.quantityContainer}>
-                <button type="button" className={styles.button}>
+                <button type="button" className={styles.button} onClick={() => handleButtonQuantity("decrease", itemQuantity)}>
                     -
                 </button>
                 <label className={styles.offscreen} htmlFor="quantity">quantity</label>
-                <input name="quantity" id="quantity" className={styles.input} defaultValue={0}></input>
-                <button type="button" className={styles.button}>
+                <input name="quantity" id="quantity" className={styles.input} value={itemQuantity} onChange={handleInputQuantity}></input>
+                <button type="button" className={styles.button} onClick={() => handleButtonQuantity("increase", itemQuantity)}>
                     +
                 </button>
             </div>
