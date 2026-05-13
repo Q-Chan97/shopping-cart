@@ -2,7 +2,7 @@ import { useState } from "react";
 
 import styles from "./Card.module.css";
 
-export default function Card({ image, title, price, rating, count }) {
+export default function Card({ id, image, title, price, rating, count, addToCart }) {
     const [itemQuantity, setItemQuantity] = useState(0);
 
     function handleInputQuantity(e) {
@@ -47,7 +47,9 @@ export default function Card({ image, title, price, rating, count }) {
                     +
                 </button>
             </div>
-            <button type="button" className={styles.submitButton}>
+            <button type="button" 
+                    className={styles.submitButton}
+                    onClick={() => addToCart({ id, image, title, price, rating, count }, itemQuantity)}>
                 Add to cart
             </button>
         </article>
