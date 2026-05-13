@@ -52,11 +52,11 @@ export default function App() {
       const existingItem = oldCart.find(item => item.id === product.id);
 
       if (existingItem) {
-        return oldCart.map((item) => {
+        return oldCart.map((item) => (
           item.id === product.id
           ? {...item, quantity: item.quantity + quantityToAdd }
           : item
-        })
+        ))
       }
 
       return [...oldCart, {...product, quantity: quantityToAdd}]
