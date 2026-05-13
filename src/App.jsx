@@ -5,6 +5,9 @@ import { useState, useEffect, useRef } from "react";
 import "./App.css";
 
 export default function App() {
+  const [womensShopData, setWomensShopData] = useState([]);
+  const [mensShopData, setMensShopData] = useState([]);
+  const [jewelryShopData, setJewelryShopData] = useState([]);
 
   const hasFetched = useRef(false);
 
@@ -23,13 +26,15 @@ export default function App() {
           })
         }
 
-        const womensData = filterProduct(allProducts, "women's clothing");
-        const mensData = filterProduct(allProducts, "men's clothing");
-        const jewelryData = filterProduct(allProducts, "jewelery");
+        const filterWomens = filterProduct(allProducts, "women's clothing");
+        const filterMens = filterProduct(allProducts, "men's clothing");
+        const filterJewelry = filterProduct(allProducts, "jewelery");
 
-        console.log(womensData);
-        console.log(mensData);
-        console.log(jewelryData);
+        console.log(filterWomens);
+
+        setWomensShopData(filterWomens);
+        setMensShopData(filterMens);
+        setJewelryShopData(filterJewelry);
 
       } catch (err) {
         console.log(err);
@@ -37,7 +42,7 @@ export default function App() {
     }
 
     fetchData();
-  })
+  }, [])
 
   return (
     <div>
@@ -45,7 +50,7 @@ export default function App() {
         <Nav />
       </header>
       <main>
-        <Outlet />
+        <Outlet context={{ womensData: womensShopData, mensData: mensShopData, jewelryData: jewelryShopData }} />
       </main>
     </div>
   )
