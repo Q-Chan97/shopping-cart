@@ -9,6 +9,8 @@ export default function App() {
   const [mensShopData, setMensShopData] = useState([]);
   const [jewelryShopData, setJewelryShopData] = useState([]);
 
+  const [cart, setCart] = useState([]);
+
   const hasFetched = useRef(false);
 
   useEffect(() => { // API request for product information
@@ -42,7 +44,24 @@ export default function App() {
     }
 
     fetchData();
-  }, [])
+  }, []);
+
+  function addToCart(product, quantityToAdd) {
+    console.log("Add to Cart fired");
+    setCart(oldCart => {
+      const existingItem = oldCart.find(item => item.id === product.id);
+
+      if (existingItem) {
+        return oldCart.map((item) => {
+          item.id === product.id
+          ? {...item, quantity: item.quantity + quantityToAdd }
+          : item
+        })
+      }
+
+      return [...oldCart, {...product, quantity: quantityToAdd}]
+    })
+  };
 
   return (
     <div>
@@ -50,7 +69,7 @@ export default function App() {
         <Nav />
       </header>
       <main>
-        <Outlet context={{ womensData: womensShopData, mensData: mensShopData, jewelryData: jewelryShopData }} />
+        <Outlet context={{ womensData: womensShopData, mensData: mensShopData, jewelryData: jewelryShopData, cart:cart, setCart:setCart, addToCart:addToCart }} />
       </main>
     </div>
   )
