@@ -4,6 +4,7 @@ import styles from "./Card.module.css";
 
 export default function Card({ id, image, title, price, rating, count, addToCart }) {
     const [itemQuantity, setItemQuantity] = useState(0);
+    const [imageLoaded, setImageLoaded] = useState(false);
 
     function handleInputQuantity(e) {
         e.preventDefault();
@@ -25,7 +26,15 @@ export default function Card({ id, image, title, price, rating, count, addToCart
 
     return (
         <article className={styles.cardContainer}>
-            <div className={styles.imgContainer}><img className={styles.image} src={image} alt="product image" /></div>
+            <div className={styles.imgContainer}>
+                <img 
+                    className={`${styles.image} ${imageLoaded ? styles.loaded : ""}`} 
+                    src={image} 
+                    alt="product image"
+                    loading="lazy"
+                    decoding="async"
+                    onLoad={() => setImageLoaded(true)} />
+            </div>
             <div>
                 <h4 className={styles.title}>{title}</h4>
                 <div className={styles.rating}>
