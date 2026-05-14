@@ -15,6 +15,7 @@
     display: flex;
     gap: 10px;
     margin-left: auto;
+    margin-right: 3rem;
     font-family: "Noto Sans Cypro Minoan", Arial, sans-serif;
     font-size: 1.3rem;
     font-weight: bold;
@@ -31,4 +32,10 @@
 
 .checkoutDiv:hover {
     cursor: not-allowed;
+}
+
+@media (width > 600px) {
+    .totalContainer {
+        margin-right: 8rem;
+    }
 }

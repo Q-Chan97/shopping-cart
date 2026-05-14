@@ -1,16 +1,20 @@
 .container {
     display: flex;
-    justify-content: space-between;
+    align-self: center;
     font-family: "Noto Sans Cypro Minoan", Arial, sans-serif;
     font-size: 1rem;
     padding: 10px;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.301)
+    background-color: white;
+    width: 90%;
+    border: 1px solid rgba(0, 0, 0, 0.301);
+    border-radius: 10px;
 }
 
 .infoContainer {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    margin-left: auto;
 }
 
 .itemInfoContainer {
@@ -21,8 +25,9 @@
 }
 
 .imgContainer {
-    min-width: 80px;
-    height: 80px;
+    min-width: 90px;
+    width: 90px;
+    height: 90px;
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.301);
 }
 
@@ -36,7 +41,6 @@
     white-space: nowrap;
     text-overflow: ellipsis;
     overflow: hidden;
-    min-width: 0 ;
 }
 
 .total {
@@ -56,4 +60,38 @@
 .remove svg {
     width: 100%;
     height: 100%;
+}
+
+
+@media (width > 600px) {
+
+    .container {
+        padding: 1rem 4rem;
+        max-width: 85%;
+    }
+
+    .itemInfoContainer {
+        align-self: center;
+        max-width: 600px;
+    }
+
+    .imgContainer {
+        min-width: 175px;
+        width: 175px;
+        height: 175px;
+    }
+
+    .total {
+        font-size: 1.1rem;
+    }
+
+    .remove {
+        width: 35px;
+        transition: transform 200ms;
+        cursor: pointer;
+    }
+
+    .remove:hover {
+        transform: scale(110%);
+    }
 }
