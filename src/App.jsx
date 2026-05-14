@@ -62,13 +62,19 @@ export default function App() {
     })
   };
 
+  function removeFromCart(id) {
+    setCart(oldCart => 
+        oldCart.filter(item => item.id !== id)
+    )
+  };
+
   return (
     <div>
       <header>
         <Nav />
       </header>
       <main>
-        <Outlet context={{ womensData: womensShopData, mensData: mensShopData, jewelryData: jewelryShopData, cart:cart, setCart:setCart, addToCart:addToCart }} />
+        <Outlet context={{ womensData: womensShopData, mensData: mensShopData, jewelryData: jewelryShopData, cart:cart, setCart:setCart, addToCart:addToCart, removeFromCart:removeFromCart }} />
       </main>
     </div>
   )
