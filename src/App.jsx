@@ -1,4 +1,5 @@
 import Nav from "./components/Nav/Nav.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 import { Outlet } from "react-router";
 import { useState, useEffect, useRef } from "react";
 
@@ -76,6 +77,9 @@ export default function App() {
       <main>
         <Outlet context={{ womensData: womensShopData, mensData: mensShopData, jewelryData: jewelryShopData, cart:cart, setCart:setCart, addToCart:addToCart, removeFromCart:removeFromCart }} />
       </main>
+      <footer>
+        <Footer />
+      </footer>
     </div>
   )
 }
