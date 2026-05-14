@@ -47,7 +47,6 @@ export default function App() {
   }, []);
 
   function addToCart(product, quantityToAdd) {
-    console.log("Add to Cart fired");
     setCart(oldCart => {
       const existingItem = oldCart.find(item => item.id === product.id);
 
