@@ -41,8 +41,8 @@ export default function Card({ id, image, title, price, rating, count, addToCart
                 <button type="button" className={styles.button} onClick={() => handleButtonQuantity("decrease", itemQuantity)}>
                     -
                 </button>
-                <label className={styles.offscreen} htmlFor="quantity">quantity</label>
-                <input name="quantity" id="quantity" className={styles.input} value={itemQuantity} onChange={handleInputQuantity}></input>
+                <label className={styles.offscreen} htmlFor={title + " quantity"}>quantity</label>
+                <input name={title + " quantity"} id={title + " quantity"} className={styles.input} value={itemQuantity} onChange={handleInputQuantity}></input>
                 <button type="button" className={styles.button} onClick={() => handleButtonQuantity("increase", itemQuantity)}>
                     +
                 </button>
