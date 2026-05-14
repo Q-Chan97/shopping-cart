@@ -4,7 +4,7 @@ import styles from "./Cart.module.css";
 import CartCard from "../CartCard/CartCard.jsx";
 
 export default function Cart() {
-    const { cart, setCart, } = useOutletContext();
+    const { cart, removeFromCart } = useOutletContext();
 
     function calculateSubtotal(item) {
         return (item.price * item.quantity).toFixed(2);
@@ -24,7 +24,7 @@ export default function Cart() {
                 <h3>Your cart</h3>
                 <div className={styles.cartContainer}>
                     {cart.map((product) => (
-                        <CartCard key={product.id} id={product.id} image={product.image} title={product.title} price={product.price} quantity={product.quantity} subtotal={calculateSubtotal(product)} />
+                        <CartCard key={product.id} id={product.id} image={product.image} title={product.title} price={product.price} quantity={product.quantity} subtotal={calculateSubtotal(product)} remove={() => removeFromCart(product.id)} />
                     ))}
                 </div>
                 <div className={styles.totalContainer}>
