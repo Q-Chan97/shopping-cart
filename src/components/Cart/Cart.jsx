@@ -21,7 +21,7 @@ export default function Cart() {
     return (
         isPopulated ? (
             <section className={styles.pageContainer}>
-                <h3>Your cart</h3>
+                <h3>Your Cart</h3>
                 <div className={styles.cartContainer}>
                     {cart.map((product) => (
                         <CartCard key={product.id} id={product.id} image={product.image} title={product.title} price={product.price} quantity={product.quantity} subtotal={calculateSubtotal(product)} remove={() => removeFromCart(product.id)} />
