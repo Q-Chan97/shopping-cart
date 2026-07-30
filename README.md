@@ -4,8 +4,8 @@ A mock e-commerce storefront built with React, featuring a fully interactive sho
 
 **Live Demo:** https://shopping-cart-3xb.pages.dev/
 
-![Screenshot]("../../screenshots/Shopperoo_Screenshot_1.png")
-![Screenshot]("../../screenshots/Shopperoo_Scrreenshot_2.png")
+![Screenshot](/screenshots/Shopperoo_Screenshot_1.png)
+![Screenshot](/screenshots/Shopperoo_Screenshot_2.png)
 
 ## Features
    - Browse a product catalog with selectable quantities via button controls or direct numeric input
