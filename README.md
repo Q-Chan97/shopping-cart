@@ -1,32 +1,28 @@
 # Shopping Cart
 
-This is a mock shopping cart project created as part of The Odin Project's React course. 
+A mock e-commerce storefront built with React, featuring a fully interactive shopping cart and dynamic product browsing.
 
-This project is meant to showcase my understanding of:
-   - State
-   - Routers
-   - API fetching
-   - Styling with CSS Modules
-   - Vitest testing framework in React
+**Live Demo:** https://shopping-cart-3xb.pages.dev/
 
-The technologies I used for this project are: 
+![Screenshot]("../../screenshots/Shopperoo_Screenshot_1.png")
+![Screenshot]("../../screenshots/Shopperoo_Scrreenshot_2.png")
+
+## Features
+   - Browse a product catalog with selectable quantities via button controls or direct numeric input
+   - Persistent cart state that updates in real time as products are added or removed
+   - Client-side routing via React Router with a landing page, products page, and cart view
+   - Scoped styling via CSS Modules at the component level
+   - Async product data fetching from a third-party API
+
+## Technologies 
    - React
-   - CSS
+   - React Router
+   - CSS Modules
    - Vitest
    - React Testing Library
-   - Jest Testing Library
 
-This project features:
-   - An interactive navbar
-   - An Outlet that loads the following:
-    - A landing page
-    - Products page with selectable quantities using buttons or a numerically-locked input
-    - A cart that updates according to what products the user has selected
-   - CSS modules scoped to the component level
-   - Testing using React components
 
-<!-- Credits -->
+## Credits
 
 Fonts and Icons by Google
-
-Home image by Vitaly Gariev on Pexels
+Home image by Vitaly Gariev via Pexels
